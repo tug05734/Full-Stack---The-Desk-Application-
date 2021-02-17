@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /*
@@ -105,6 +106,17 @@ public class main {
         int leng = arrayList.size();
         System.out.println("Enter the expense you need to search:\t");
         //Complete the method
+        Scanner in = new Scanner(System.in);
+        boolean found = false;
+        int searchFor = in.nextInt();
+        for (int i = 0; i < arrayList.size(); i++){
+            if(arrayList.get(i).equals(searchFor)){
+                found = true;
+                break;
+            }
+        }
+        if(found){System.out.println("\nExpense found!\n");}
+        else{System.out.println("\nExpense not found.\n");}
     }
     private static void sortExpenses(ArrayList<Integer> arrayList) {
         int arrlength =  arrayList.size();
